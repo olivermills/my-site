@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ollie Mills</title>
+    <link>/</link>
+    <description>Recent content on Ollie Mills</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 16 Feb 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>This is my personal website created partly to showcase my personal data projects and to also give a brief overview of my professional and academic experience. I&amp;rsquo;m a 25 year old kiwi living in Manchester, UK with a fascination for telling stories through data and information. In my spare time I enjoy shooting film photos and creating electronic music, preferably with a cold craft brew somewhere along the way.</description>
+    </item>
+    
+    <item>
+      <title>Film Photos</title>
+      <link>/2019/02/16/film-photos/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/02/16/film-photos/</guid>
+      <description>A few film photos from my recent travels in Eastern Europe. All photos taken on a Canon A-1. </description>
+    </item>
+    
+  </channel>
+</rss>
