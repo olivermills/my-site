@@ -1,7 +1,7 @@
 baseurl = "/"
 relativeurls = true
 languageCode = "en-us"
-title = "Ollie Mills"
+title = "Oliver Mills"
 theme = "hyde"
 googleAnalytics = ""
 disqusShortname = ""
@@ -22,6 +22,9 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 [[menu.contact]]
     name = "Email"
     url = "mailto:olivarski@gmail.com"
+[[menu.contact]]
+    name = "GitHub"
+    url = "https://github.com/olivermills"
 
 [author]
     image = 'me.jpg'
@@ -33,7 +36,7 @@ ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
     contactHeader = "Contact Me"
 
     # Change Hyde theme
-    #themeColor = "theme-base-08"
+    themeColor = "theme-base-0d"
     # Overide or add custom CSS styles
     #customCSS = "/css/custom.css"
 
