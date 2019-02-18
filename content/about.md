@@ -11,4 +11,4 @@ title: About
 * **Bachelor of Science:** **Mathematics** and **Statistics** (2016, University of Auckland)
 * **Bachelor of Arts:** **Economics** and **Philosophy** (2016, University of Auckland)
 
-I decided to create this website to learn the fundamentals of web design and Git as well as showcasing my personal data projects in R. I'm a 25 year old kiwi living in Manchester, UK with a fascination for telling stories through data and information. In my spare time I enjoy shooting [film photos](/2019/02/16/film-photos/) and creating [electronic music](https://soundcloud.com/gusnwes), preferably with a cold craft brew somewhere along the way.
+I decided to create this website to learn the fundamentals of web design and Git as well as showcase some of my personal data projects in R. I'm a kiwi currently in the process of moving to Manchester, UK with a fascination for telling stories through data and information. In my spare time I enjoy shooting [film](/2019/02/16/film-photos/) and creating [electronic music](https://soundcloud.com/gusnwes).

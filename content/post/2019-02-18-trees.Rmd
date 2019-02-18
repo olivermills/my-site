@@ -6,7 +6,7 @@ Here's an interactive map of 'notable' trees in the Auckland region I created th
 
 <iframe width="100%" height="450" name="iframe" src="/trees.html" frameborder="0" scrolling="no" onload="resizeIframe(this)"></iframe>
 
-The inspiration for this post came from [Isaac Bain's tutorial](http://www.isaacbain.co.nz/tutorials/GIS-R.html) using freely available data to map the DOC huts around NZ. You can re-create a similar visualisation with any shapefile by following the following steps:
+The inspiration for this post came from [Isaac Bain's tutorial](http://www.isaacbain.co.nz/tutorials/GIS-R.html) where he used freely available data to map the DOC huts around NZ. You can re-create a similar visualisation with basically any shapefile by following the following steps:
 ```{r, eval=FALSE}
 #load required libraries, set working directory and unzip the shapefile
 library(tidyverse)
@@ -33,10 +33,15 @@ And here is where we see the beauty of Leaflet, in just a few lines of code we h
 ```{r, eval=FALSE}
 #Map notable trees, add circle marker, centre the map and change the map type
 leaflet(trees) %>%
+  
    addCircleMarkers(stroke = FALSE, radius = 3.5, color = "Green", fillOpacity = 0.7, popup = tree_popup, label=trees$NAME, labelOptions = labelOptions(textOnly = TRUE)) %>%
+  
    setView(lng = 174.8335603 , lat = -36.8818881, zoom = 12) %>%  # centered around Auckland
+  
    addTiles() %>%
+  
    addProviderTiles("Stamen.Toner", group = "Toner") %>% #changing the map=type
+  
    addProviderTiles(providers$Stamen.Terrain, group = "Terrain")
 ```
 
