@@ -1,0 +1,35 @@
+---
+date: "2019-02-17"
+title: Notable Trees in Auckland, NZ
+---
+
+
+
+<p>Here’s an interactive map of ‘notable’ trees in the Auckland region I created this using <a href="https://rstudio.github.io/leaflet/">Leaflet</a>, a powerful mapping package in R. Take your time to scroll around the Auckland region and click on the green points to see what kind of special trees you have in your neighbourhood! (<a href="https://koordinates.com/layer/6392-pup-notable-trees/">datasource</a>)</p>
+<iframe width="100%" height="450" name="iframe" src="/trees.html" frameborder="0" scrolling="no" onload="resizeIframe(this)">
+</iframe>
+<p>The inspiration for this post came from <a href="http://www.isaacbain.co.nz/tutorials/GIS-R.html">Isaac Bain’s tutorial</a> using freely available data to map the DOC huts around NZ. You can re-create a similar visualisation with any shapefile by following the following steps:</p>
+<pre class="r"><code>#load required libraries, set working directory and unzip the shapefile
+library(tidyverse)
+library(sp)
+library(leaflet)
+library(spdplyr)
+library(rgdal)
+setwd(&quot;C:\\Users\\user\\Documents\\trees&quot;)
+unzip(&quot;kx-pup-notable-trees-SHP.zip&quot;)</code></pre>
+<p>I downloaded my data from <a href="https://koordinates.com/">Koordinates</a> which holds GIS datasets from all around the world! In the next step I am reading in the data and converting it to the wgs84 standard.</p>
+<pre class="r"><code>#read in dataset and transform to wgs84 standard
+trees &lt;- readOGR(&quot;C:\\Users\\user\\Documents\\trees&quot;,&quot;pup-notable-trees&quot;)
+wgs84 = &#39;+proj=longlat +datum=WGS84&#39;
+trees &lt;- spTransform(trees, CRS(wgs84))</code></pre>
+<p>In this step I am creating the HTML popup when a user clicks on the data point. You can get pretty fancy with these but the shapefile I had did not have much other information about the tree apart from the name.</p>
+<pre class="r"><code>#create pop-up info
+tree_popup &lt;- paste0(&quot;&lt;strong&gt;Name: &lt;/strong&gt;&quot;, trees$NAME)</code></pre>
+<p>And here is where we see the beauty of Leaflet, in just a few lines of code we have created a nice map for users to explore.</p>
+<pre class="r"><code>#Map notable trees, add circle marker, centre the map and change the map type
+leaflet(trees) %&gt;%
+   addCircleMarkers(stroke = FALSE, radius = 3.5, color = &quot;Green&quot;, fillOpacity = 0.7, popup = tree_popup, label=trees$NAME, labelOptions = labelOptions(textOnly = TRUE)) %&gt;%
+   setView(lng = 174.8335603 , lat = -36.8818881, zoom = 12) %&gt;%  # centered around Auckland
+   addTiles() %&gt;%
+   addProviderTiles(&quot;Stamen.Toner&quot;, group = &quot;Toner&quot;) %&gt;% #changing the map=type
+   addProviderTiles(providers$Stamen.Terrain, group = &quot;Terrain&quot;)</code></pre>

@@ -12,12 +12,13 @@
     
     
     <item>
-      <title>Trees</title>
-      <link>/2019/02/17/trees/</link>
+      <title>Notable Trees in Auckland, NZ</title>
+      <link>/2019/02/17/notable-trees-in-auckland-nz/</link>
       <pubDate>Sun, 17 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/02/17/trees/</guid>
-      <description> </description>
+      <guid>/2019/02/17/notable-trees-in-auckland-nz/</guid>
+      <description>Here’s an interactive map of ‘notable’ trees in the Auckland region I created this using Leaflet, a powerful mapping package in R. Take your time to scroll around the Auckland region and click on the green points to see what kind of special trees you have in your neighbourhood! (datasource)
+The inspiration for this post came from Isaac Bain’s tutorial using freely available data to map the DOC huts around NZ.</description>
     </item>
     
     <item>
@@ -26,7 +27,7 @@
       <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>Work Experience 3.5+ years experience working as a data and information analyst for the Ministry of Business, Innovation and Employment. In this role I helped roll out a number of data initiatives aimed at increasing the data maturity of the NZ Companies Office. These initiatives ranged from creating a cross-registry data catalogue, undertaking data quality and governance excercises and working with stakeholders to design analytical solutions to business problems.</description>
+      <description>Work Experience 3.5+ years experience working as a data and information analyst for the Ministry of Business, Innovation and Employment. In this role I helped roll out a number of data initiatives aimed at increasing the data maturity of the NZ Companies Office. These initiatives ranged from creating a cross-registry data catalogue, undertaking data quality and governance excercises and working with stakeholders to design analytical solutions to solve real business problems.</description>
     </item>
     
     <item>
