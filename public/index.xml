@@ -6,10 +6,20 @@
     <description>Recent content on Oliver Mills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 09 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Web Scraping and Word Clouds</title>
+      <link>/2019/03/09/web-scraping-and-word-clouds/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/2019/03/09/web-scraping-and-word-clouds/</guid>
+      <description>What better way to guage the opinion of the general public than trawling through online comments on articles. The visuals below were created by scraping the comments from an article about the proposed capital gains tax in NZ and using R to do some basic text mining and data visualisation.
+This wordcloud above shows the overall sentiment of the comments, seperating each word into positive (green) or negative (red) groupings based on the users comments.</description>
+    </item>
     
     <item>
       <title>Notable Trees in Auckland, NZ</title>
