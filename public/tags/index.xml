@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Oliver Mills</title>
@@ -6,9 +6,37 @@
     <description>Recent content in Tags on Oliver Mills</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Coronavirus</title>
+      <link>/tags/coronavirus/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/coronavirus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dashboards</title>
+      <link>/tags/dashboards/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/dashboards/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerBI</title>
+      <link>/tags/powerbi/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/powerbi/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

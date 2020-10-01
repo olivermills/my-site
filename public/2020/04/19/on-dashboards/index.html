@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+
+		
+		<title>Dashboards &middot; Oliver Mills</title>
+		
+
+		
+			
+		
+
+		
+
+		
+		
+
+		
+
+		<link rel="stylesheet" href="../../../../font-awesome/css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="../../../../css/poole.css">
+		<link rel="stylesheet" href="../../../../css/syntax.css">
+		<link rel="stylesheet" href="../../../../css/hyde.css">
+		
+		
+		<link href="" rel="alternate" type="application/rss+xml" title="Oliver Mills">
+		<link href="../../../../2020/04/19/on-dashboards" rel="canonical">
+		
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-134759200-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+	</head>
+
+</script>
+	<body class="theme-base-0d  h-entry">
+		<main class="content container" role="main">
+			<article class="post">
+				<header>
+					<a class="u-url" href="../../../../2020/04/19/on-dashboards">
+						<h1 class="post-title p-name">Dashboards</h1>
+					</a>
+					<time class="post-date dt-published" datetime="2020-04-19T00:00:00Z">Sunday, 19 April 2020</time>
+				</header>
+				<main class="post-content e-content">
+					
+
+
+<div id="background" class="section level3">
+<h3>Background</h3>
+<p>From Monday to Friday I create dashboards in Power BI for a company in Manchester (and really enjoy it). During the start of lockdown I decided to challenge myself and scratch up on my R skills and attempt to create a covid-19 dashboard using the <a href="https://rmarkdown.rstudio.com/flexdashboard/">flexdashboard</a> package in R. I considered using <a href="https://shiny.rstudio.com/">Shiny</a> but the integration with <a href="https://pages.github.com/">Github Pages</a> seemed a little easier, and meant that all I had to do for deployment was click one button in R and commit the updated html file directly to github - no hosting issues. The <a href="https://github.com/pbatey/flexdashboard-example">tutorial</a> showing how to host a flexdashboard on Github Pages was fairly vague but I got there in the end.</p>
+<p>I first tried to draw on my dusty modelling skills from Uni and fit an <a href="https://simple.wikipedia.org/wiki/SIR_model">SIR model</a> to the covid-19 data, to try and predict the outbreak, based on this <a href="https://blog.ephorie.de/contagiousness-of-covid-19-part-i-improvements-of-mathematical-fitting-guest-post?fbclid=IwAR26OPedeyov5wJRa4lm45ReDpgGxk2b-seatO2ZM2xJDv7oICL4wQEeWR4">blog post</a> - I failed miserably, but luckily stumbled on Rami Krispin’s <a href="https://ramikrispin.github.io/coronavirus_dashboard/">dashboard</a> made using flexdashboard in R. I also struggled with finding an accurate provider of the infamous JHU <a href="https://github.com/CSSEGISandData/COVID-19">dataset</a>, consuming it from source required me to update my code daily (as they had to make regular changes), and I failed to connect to several API’s (user error I assume) - in the end I found a nice <a href="https://cran.r-project.org/web/packages/coronavirus/coronavirus.pdf">coronavirus</a> package in R which alot of people where using.</p>
+</div>
+<div id="the-dashboard" class="section level3">
+<h3>The Dashboard</h3>
+<p>The dashboard shows cumulative cases, death rates, a comparison between UK and NZ (partly to show 2 very different government responses to the outbreak), an interactive map of cases and another tab of some general trends. Check it out below:</p>
+<p><a href="https://olivermills.github.io/covid19/">The Coronavirus Dashboard</a></p>
+<p><img src="../../../../dashboard.jpg" /></p>
+<p>As the UK lockdown dragged on I quickly lost interest in developing it further (I had probably moved onto banana bread by that stage), but recently checked on it to see if it was still working (by some stroke of luck it was), so it includes data up to about mid September.</p>
+</div>
+<div id="power-bi-vs-r" class="section level3">
+<h3>Power BI vs R?</h3>
+<p>Based on my experience creating this dashboard, I think Power BI is definitely my preferred choice to make a dashboard. The lack of “drag and drop” was painful for positioning graphs and tables, and having to render the dashboard after each change, rather than seeing it change live was tedious. However, it was awesome having direct access to the <a href="https://www.tidyverse.org/">Tidyverse</a> and I can imagine the machine learning and data viz packages would easily outperform Power BI’s capabilities. However, for something as simple as descriptive statistics with a few graphs I would much prefer to use Power BI. It’s not really even fair to compare both tools, since R is capable of many many things, and was never initially designed to be a dashboarding tool.</p>
+<p>Of course, Power BI comes with a hefty cost for enterprise clients, starting at around $5k per month for Power BI Premium, or 10 dollars per month, per user for the Pro version. R is of course, open source and comes with 16,000 different free packages for almost any data scenario (this website is entirely created in R, for example).</p>
+<p>An under-looked feature of Power BI it’s ability to run Python and R scripts in the Query Editor (where data manipulation happens) as well as for custom visuals. There are some limitations, such as a limit on the number of rows used for a visualisation, and if an automatic refresh schedule is needed, you will have to publish the final report via an on-premise gateway (with R installed), which comes with it’s own challenges - but hopefully these will be addressed in time. Here’s some cool <a href="https://community.powerbi.com/t5/R-Script-Showcase/bd-p/RVisuals">showcases</a> of how R and Power BI can be used together. It’s definitely something I want to take advantage of in the future.</p>
+<p>As with all of these “which data tool is better” posts flooding the internet, the answer is that it will depend entirely on the use case. Problems requiring very complex data cleansing, state of the art statistical analysis or smaller companies unable to afford the cost of Power BI Premium would be better off going down the open source route (R/Python), whereas larger companies that need the security, scalability and support of a commercial tool would be better off using Power BI - not to mention some exciting <a href="https://docs.microsoft.com/en-us/power-platform-release-plan/2020wave2/power-bi/planned-features">features</a> recently released/on the horizon!</p>
+</div>
+
+				</main>
+				<footer class="footer">
+					
+					<span>
+						Category:
+						
+						<a class="p-category" href="../../../../categories/powerbi/">PowerBI</a>
+						
+						<a class="p-category" href="../../../../categories/dashboards/">Dashboards</a>
+						
+						<a class="p-category" href="../../../../categories/coronavirus/">Coronavirus</a>
+						
+					</span>
+					
+					
+					<p>
+						Tags:
+						
+						<a class="p-category" href="../../../../tags/powerbi/">PowerBI</a>
+						
+						<a class="p-category" href="../../../../tags/dashboards/">Dashboards</a>
+						
+						<a class="p-category" href="../../../../tags/coronavirus/">Coronavirus</a>
+						
+
+					</p>
+					
+				</footer>
+			</article>
+		</main>
+				<aside class="sidebar">
+			<div class="container sidebar-sticky">
+				<header class="sidebar-about h-card vcard p-author">
+					
+					<a class="u-url u-uid" rel="me" href="../../../../">
+						<img class="u-photo" src="../../../../me.jpg" width=128 height=128 />
+					</a>
+					
+
+					
+					<span class="site-title u-name fn">
+					  <a class="u-url u-uid" rel="me" href="../../../../">Oliver Mills</a>
+				  </span>
+					
+
+					<p class="lead p-note">
+						 A personal website built through Hugo and blogdown (R Studio). 
+					</p>
+
+					<nav>
+						<ul class="sidebar-nav">
+							
+							<li><a href="../../../../about/"> About </a></li>
+							
+							<li><a href="../../../../2020/04/19/on-dashboards/"> Dashboards </a></li>
+							
+							<li><a href="../../../../post/"> Posts </a></li>
+							
+							<li><a href="../../../../2019/03/09/web-scraping-and-word-clouds/"> Web Scraping and Word Clouds </a></li>
+							
+						</ul>
+					</nav>
+
+					
+						<aside class="contact">
+						  
+							  <h3 class="contact-head">Contact Me</h3>
+						  
+							<ul class="contact-list">
+								
+								<li>
+									
+		  							<i class='fa fa-envelope fa-fw'></i>
+		  							<a href="mailto:olivarski@gmail.com" class="u-email email" rel="me">
+		  							  Email
+		  							</a>
+									
+								</li>
+								
+								<li>
+									
+									  
+		  						    <i class='fa fa-github fa-fw'></i>
+		  						  
+		  							<a href="https://github.com/olivermills" class="u-url url" rel="me">
+		  							  GitHub
+		  							</a>
+								
+								</li>
+								
+								<li>
+									
+									  
+		  						    <i class='fa fa-linkedin fa-fw'></i>
+		  						  
+		  							<a href="https://nz.linkedin.com/in/oliver-mills-a2238559" class="u-url url" rel="me">
+		  							  LinkedIn
+		  							</a>
+								
+								</li>
+								
+							</ul>
+						</aside>
+					
+				</header>
+
+				<footer>&copy; 2020. All rights reserved. </footer>
+			</div>
+		</aside>
+
+		  <footer>
+  
+  
+ 
+  
+<script src="../../../../js/math-code.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    processEscapes: true
+  }
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+  
+  </footer>
+  </body>
+</html>
+
+	</body>
+</html>

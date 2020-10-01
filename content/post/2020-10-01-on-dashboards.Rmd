@@ -1,7 +1,7 @@
 ---
 title: "Dashboards"
 author: "Oliver Mills"
-date: '2020-04-19'
+date: '2020-10-01'
 output:
   html_document:
     df_print: paged
@@ -12,7 +12,7 @@ Tags:
 - Coronavirus
 menu: main
 Description: ''
-slug: on-dashboards
+slug: dashboards
 tags: []
 Categories:
 - PowerBI

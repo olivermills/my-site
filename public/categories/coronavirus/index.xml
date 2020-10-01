@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Coronavirus on Oliver Mills</title>
+    <link>/categories/coronavirus/</link>
+    <description>Recent content in Coronavirus on Oliver Mills</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Oct 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/coronavirus/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dashboards</title>
+      <link>/2020/10/01/dashboards/</link>
+      <pubDate>Thu, 01 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/2020/10/01/dashboards/</guid>
+      <description>BackgroundFrom Monday to Friday I create dashboards in Power BI for a company in Manchester (and really enjoy it). During the start of lockdown I decided to challenge myself and scratch up on my R skills and attempt to create a covid-19 dashboard using the flexdashboard package in R. I considered using Shiny but the integration with Github Pages seemed a little easier, and meant that all I had to do for deployment was click one button in R and commit the updated html file directly to github - no hosting issues.</description>
+    </item>
+    
+  </channel>
+</rss>
